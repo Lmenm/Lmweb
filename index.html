@@ -421,6 +421,54 @@ Social Media Design
 
 </div>
 </section>
+<script>
+  var form = document.getElementById("my-form");
+  var statusDiv = document.getElementById("form-status");
+  var submitBtn = document.getElementById("submit-btn");
+
+  async function handleSubmit(event) {
+    event.preventDefault(); // ገጹ Re-load እንዳይሆን ይከለክላል
+    
+    var data = new FormData(event.target);
+    submitBtn.innerText = "sending...";
+    submitBtn.disabled = true;
+
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+          'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        // መልእክቱ በተሳካ ሁኔታ ከተላከ የሚታይ ኖቲፊኬሽን
+        statusDiv.style.display = "block";
+        statusDiv.style.backgroundColor = "#d4edda"; // አረንጓዴ ከለር
+        statusDiv.style.color = "#155724";
+        statusDiv.innerText = "Thank You! I have received your message.";
+        form.reset(); // ፎርሙን ባዶ ያደርገዋል
+      } else {
+        response.json().then(data => {
+          if (Object.hasOwn(data, 'errors')) {
+            statusDiv.innerText = data["errors"].map(error => error["message"]).join(", ");
+          } else {
+            statusDiv.innerText = "Sorry,an error ⚠️ is occurred.";
+          }
+        })
+      }
+    }).catch(error => {
+      statusDiv.style.display = "block";
+      statusDiv.style.backgroundColor = "#f8d7da"; // ቀይ ከለር
+      statusDiv.style.color = "#721c24";
+      statusDiv.innerText = "internet 📶 connection error,Please try again.";
+    }).finally(() => {
+      submitBtn.innerText = "send message";
+      submitBtn.disabled = false;
+    });
+  }
+  
+  form.addEventListener("submit", handleSubmit)
+</script>
 
 <footer>
 © 2026 Limenh Mengstie | All Rights Reserved

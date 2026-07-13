@@ -234,6 +234,100 @@ font-size:20px;
 grid-template-columns:1fr;
 }
 }
+   *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+      padding:20px;
+    }
+
+    .container{
+      background:#1e293b;
+      max-width:700px;
+      width:100%;
+      padding:40px;
+      border-radius:25px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.4);
+      text-align:center;
+    }
+
+    h1{
+      font-size:40px;
+      margin-bottom:15px;
+      color:#38bdf8;
+    }
+
+    p{
+      color:#cbd5e1;
+      line-height:1.8;
+      margin-bottom:30px;
+    }
+
+    .social-links{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:15px;
+      margin-bottom:30px;
+    }
+
+    .social-links a{
+      text-decoration:none;
+      color:white;
+      padding:12px 20px;
+      border-radius:15px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .linkedin{ background:#0077b5; }
+    .telegram{ background:#229ED9; }
+    .youtube{ background:#ff0000; }
+    .facebook{ background:#1877f2; }
+    .whatsapp{ background:#25d366; }
+    .gmail{ background:#ea4335; }
+
+    .social-links a:hover{
+      transform:translateY(-5px);
+      opacity:0.9;
+    }
+
+    .info-box{
+      background:#334155;
+      padding:20px;
+      margin-top:20px;
+      border-radius:20px;
+    }
+
+    .info-box h3{
+      margin-bottom:10px;
+      color:#38bdf8;
+    }
+
+    .email-link{
+      display:inline-block;
+      margin-bottom:25px;
+      color:#fff;
+      text-decoration:none;
+      font-weight:bold;
+      background:#ea4335;
+      padding:12px 20px;
+      border-radius:15px;
+    }
+
+    .email-link:hover{
+      opacity:0.9;
+    }
 </style>
 </head>
 <body>
@@ -395,86 +489,71 @@ Social Media Design
 </div>
 </section>
 
+  <div class="container">
 
-<script>
-  var form = document.getElementById("my-form");
-  var statusDiv = document.getElementById("form-status");
-  var submitBtn = document.getElementById("submit-btn");
+    <h1>Let's Work Together</h1>
 
-  async function handleSubmit(event) {
-    event.preventDefault(); // ገጹ Re-load እንዳይሆን ይከለክላል
-    
-    var data = new FormData(event.target);
-    submitBtn.innerText = "sending...";
-    submitBtn.disabled = true;
+    <p>
+      Interested in working with me or any one who wants our services,
+      Contact me through my social platforms.
+    </p>
 
-    fetch(event.target.action, {
-      method: form.method,
-      body: data,
-      headers: {
-          'Accept': 'application/json'
-      }
-    }).then(response => {
-      if (response.ok) {
-        // መልእክቱ በተሳካ ሁኔታ ከተላከ የሚታይ ኖቲፊኬሽን
-        statusDiv.style.display = "block";
-        statusDiv.style.backgroundColor = "#d4edda"; // አረንጓዴ ከለር
-        statusDiv.style.color = "#155724";
-        statusDiv.innerText = "Thank You! I have received your message.";
-        form.reset(); // ፎርሙን ባዶ ያደርገዋል
-      } else {
-        response.json().then(data => {
-          if (Object.hasOwn(data, 'errors')) {
-            statusDiv.innerText = data["errors"].map(error => error["message"]).join(", ");
-          } else {
-            statusDiv.innerText = "Sorry,an error ⚠️ is occurred.";
-          }
-        })
-      }
-    }).catch(error => {
-      statusDiv.style.display = "block";
-      statusDiv.style.backgroundColor = "#f8d7da"; // ቀይ ከለር
-      statusDiv.style.color = "#721c24";
-      statusDiv.innerText = "internet 📶 connection error,Please try again.";
-    }).finally(() => {
-      submitBtn.innerText = "send message";
-      submitBtn.disabled = false;
-    });
-  }
-  
-  form.addEventListener("submit", handleSubmit)
-    <section id="contact">
-<h2 class="section-title">Contact Me</h2>
+    <!-- Gmail -->
+    <a class="email-link" href="mailto:mengstielmenh@gmail.com">
+      <i class="fa-solid fa-envelope"></i> Gmail Me
+    </a>
 
-<div class="contact">
-<form action="https://formspree.io/f/xaqrwbpp" method="POST">
-  <div class="input-box">
-    <input type="text" name="name" placeholder="Full Name" required>
-    <input type="email" name="email" placeholder="Email Address" required>
+    <!-- Social Links -->
+    <div class="social-links">
+
+      <a class="linkedin"
+      href="https://www.linkedin.com/in/limenh122025"
+      target="_blank">
+      <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+
+      <a class="telegram"
+      href="https://t.me/lmenm12"
+      target="_blank">
+      <i class="fa-brands fa-telegram"></i> Telegram
+      </a>
+
+      <a class="youtube"
+      href="https://youtube.com/@lmtech12"
+      target="_blank">
+      <i class="fa-brands fa-youtube"></i> YouTube
+      </a>
+
+      <a class="facebook"
+      href="https://web.facebook.com/onlinemarket12w"
+      target="_blank">
+      <i class="fa-brands fa-facebook"></i> Facebook
+      </a>
+
+      <a class="whatsapp"
+      href="https://wa.me/qr/JEU5YHUEFZSVP1"
+      target="_blank">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </a>
+
+    </div>
+
+    <!-- Phone -->
+    <div class="info-box">
+      <h3>📱 Phone</h3>
+      <p>+251982228882</p>
+    </div>
+
+    <!-- Location -->
+    <div class="info-box">
+      <h3>🌍 Location
+      <a href="https://g.page/r/CZQvoiyVKtbiEBI/review">google map</a>
+      </h3>
+      <p>Addis Ababa, Ethiopia</p>
+    </div>
+
   </div>
-  <textarea name="message" cols="30" rows="10" placeholder="write your message ..." required></textarea>
-  <button type="submit" class="btn">send message</button>
-</form>
-
-<div class="socials">
-<a href="https://t.me/lmenm12">Telegram</a>
-<a href="http://www.linkedin.com/in/limenh122025">LinkedIn</a>
-<a href="https://github.com/Lmenm">GitHub</a>
-<a href="https://www.facebook.com/onlinemarket12w">Facebook</a>
-<a href="https://g.page/r/CZQvoiyVKtbiEBI/review">Location(map)</a>
-</div>
-
-<br>
-
-<a href="mailto:mengstielmenh@gmail.com" class="btn"> For any service Email</a>
-
-</div>
-</section>
-</script>
-
 <footer>
-Mobile:+251982228882
-  Email :mengstielmenh@gmail.com
 © 2026 Limenh Mengstie 
 </footer>
 

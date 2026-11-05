@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Professional QR Generator</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f4f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 450px;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #666;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 8px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #generateBtn {
+            background: #007bff;
+            color: white;
+        }
+
+        #downloadBtn {
+            background: #28a745;
+            color: white;
+        }
+
+        #clearBtn {
+            background: #dc3545;
+            color: white;
+        }
+
+        #qrcode {
+            margin: 25px auto;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>QR Code Generator</h1>
+
+    <p>Enter your website URL</p>
+
+    <input
+        type="text"
+        id="website"
+        value="https://lm-tech12.vercel.app/"
+        placeholder="https://example.com"
+    >
+
+    <button id="generateBtn" onclick="generateQR()">
+        Generate QR Code
+    </button>
+
+    <div id="qrcode"></div>
+
+    <button id="downloadBtn" onclick="downloadQR()">
+        Download QR Code
+    </button>
+
+    <button id="clearBtn" onclick="clearQR()">
+        Clear
+    </button>
+
+</div>
+
+
+<!-- QR Code Library -->
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+
+
+<script>
+
+    function generateQR() {
+
+        const website = document.getElementById("website").value;
+
+        if (website === "") {
+            alert("Please enter a website URL");
+            return;
+        }
+
+        const qrContainer = document.getElementById("qrcode");
+
+        // Remove old QR code
+        qrContainer.innerHTML = "";
+
+        // Create new QR code
+        new QRCode(qrContainer, {
+            text: website,
+            width: 250,
+            height: 250
+        });
+    }
+
+
+    function clearQR() {
+
+        document.getElementById("website").value = "";
+
+        document.getElementById("qrcode").innerHTML = "";
+    }
+
+
+    function downloadQR() {
+
+        const qrImage = document.querySelector("#qrcode img");
+
+        if (!qrImage) {
+            alert("Please generate a QR code first.");
+            return;
+        }
+
+        const link = document.createElement("a");
+
+        link.href = qrImage.src;
+
+        link.download = "my-website-qr.png";
+
+        link.click();
+    }
+
+
+    // Generate your portfolio QR automatically
+    generateQR();
+
+</script>
+
+</body>
+</html>

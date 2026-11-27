@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our IT Services | God Is Love</title>
+
+    <style>
+        /* ===== GENERAL STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: linear-gradient(135deg, #0f172a, #1d4ed8);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* ===== MAIN SECTION ===== */
+        main {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .services-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .services-title h2 {
+            font-size: 2rem;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .services-title p {
+            color: #64748b;
+        }
+
+        /* ===== SERVICE CARDS ===== */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+            transition: 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(15, 23, 42, 0.15);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            color: #1d4ed8;
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+
+        .service-card p {
+            color: #64748b;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact {
+            text-align: center;
+            margin-top: 50px;
+            padding: 35px 20px;
+            background: #1d4ed8;
+            color: white;
+            border-radius: 15px;
+        }
+
+        .contact h2 {
+            margin-bottom: 10px;
+        }
+
+        .contact a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            background: white;
+            color: #1d4ed8;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .contact a:hover {
+            background: #e0e7ff;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 50px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* ===== MOBILE RESPONSIVENESS ===== */
+        @media (max-width: 700px) {
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>Our Services</h1>
+        <p>Professional IT & Digital Solutions</p>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+
+        <section class="services-title">
+            <h2>Our Services</h2>
+            <p>Reliable technology solutions for individuals and businesses.</p>
+        </section>
+
+        <section class="services">
+
+            <article class="service-card">
+                <div class="service-icon">💻</div>
+                <h3>Computer Hardware & Software Maintenance</h3>
+                <p>
+                    Professional computer maintenance, troubleshooting,
+                    software installation, and system support.
+                </p>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon">🌐</div>
+                <h3>Network Troubleshooting</h3>
+                <p>
+                    Diagnose and resolve network connectivity,
+                    configuration, and performance problems.
+                </p>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon">🖥️</div>
+                <h3>Website Design</h3>
+              <!...  <p>
+                    Modern, responsive, and user-friendly websites
+                    for personal and business needs.
+                </p>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Graphic Design</h3>
+                <p>
+                    Creative designs for business cards, posters,
+                    social media content, and promotional materials.
+                </p>
+            </article>
+
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+        <section class="contact">
+            <h2>Need IT Support?</h2>
+            <p>Contact us today for professional technology services.</p>
+
+            <a href="tel:+251910945176">
+                📞 Call: +251 910 945 176
+            </a>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>
+            © 2026 <strong>God Is Love</strong>.
+            All Rights Reserved.
+        </p>
+    </footer>
+
+</body>
+</html>
